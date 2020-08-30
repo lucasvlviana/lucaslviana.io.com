@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="quadrado"></div>
+    <button id="01">
+        Quadrado
+    </button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function (){
+            ativarQuadrado()
+            $("#01").click()
+        })
+
+        const inativarQuadrado = () => {
+            $("div").remove()
+            $("#01").remove()
+        }
+
+        $("#01").click(function () {
+            var quadrado = document.createElement("div")
+           $(quadrado).attr("class", "quadrado")
+            $(quadrado).css({
+                "height": "150px",
+                "width": "150px",
+                "background": "black"
+            })
+            $("body").prepend(quadrado);
+        })
+
+        function ativarQuadrado() {
+
+            var quadrado = document.createElement("div")
+            quadrado.setAttribute("class", "quadrado")
+            quadrado.style.height = "150px"
+            quadrado.style.width = "150px"
+            quadrado.style.background = "blue"
+            document.querySelector("body").appendChild(quadrado)
+        }
+
+
+
+    </script>
+</body>
+
+</html>
